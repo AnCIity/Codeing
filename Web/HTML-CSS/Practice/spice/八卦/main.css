@@ -1,0 +1,70 @@
+#box {
+	width: 400px;
+	height: 400px;
+	background-color: aqua;
+	overflow: hidden;
+	border-radius: 50%;
+	position: relative;
+	transform: scale(0.5);
+	animation: boxrotate 1s linear infinite;
+}
+
+.box-public {
+	width: 200px;
+	height: 400px;
+}
+
+.box-left {
+	background-color: white;
+	position: absolute;
+	left: 0;
+}
+
+.box-right {
+	background-color: black;
+	position: absolute;
+	right: 0;
+}
+
+.circle {
+	width: 200px;
+	height: 200px;
+	border-radius: 50%;
+}
+
+.circle-left {
+	background-color: black;
+	position: absolute;
+	bottom: 0;
+	left: 100px;
+}
+
+.circle-right {
+	background-color: white;
+	position: absolute;
+	top: 0;
+	right: 100px;
+}
+
+.globule {
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	position: absolute;
+	top: 85px;
+	left: 85px;
+}
+
+.globule-left {
+	background-color: white;
+}
+
+.globule-right {
+	background-color: black;
+}
+
+@keyframes boxrotate{
+	0%{transform: rotate(0deg) scale(0.5);}
+	50%{transform: rotate(180deg) scale(1);}
+	100%{transform: rotate(360deg) scale(0.5);}
+}

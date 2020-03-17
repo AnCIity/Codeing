@@ -1,0 +1,26 @@
+<html>
+
+<head>
+
+</head>
+
+<body>
+    <input type="button" value="str" onclick="foo()" />
+    var str = 'a,b,c,d,e,f,g';
+    題目描述: 使得foo()函数调用弹出”成功”的对话框并且完成str的反转。代码应尽量简短。
+</body>
+<script>
+    function foo() {
+        var str = reverse('a,b,c,d,e,f,g');
+        alert(str);
+        if (str == 'g,f,e,d,c,b,a')
+            alert('成功');
+        else alert('失败');
+    }
+    function reverse(str) {
+        // 在此处加入代码，完成字符串翻转功能 
+        return str.split("").reverse().join("")
+    } 
+</script>
+
+</html>

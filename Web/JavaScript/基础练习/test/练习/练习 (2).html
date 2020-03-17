@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+
+        //猜数字游戏
+        sun();
+
+        function sun() {
+            // 此处添加代码
+            if (confirm("开始游戏？\n开始：确定，退出：取消")) {
+                // 开始  Get 随机数
+                reNum = Math.floor(Math.random() * 100);
+                // 开始游戏循环
+                isWin(parseInt(prompt("请猜想数字（0<=n<100; 整数）")));
+            } else {
+                // 退出
+                alert("Go Out! OK?")
+                window.close();
+            }
+
+            function isWin(num) {
+                if (num == reNum) {
+                    // 猜中
+                    alert("恭喜你成功猜中：" + reNum)
+                    sun()
+                } else {
+                    // 未猜中
+                    if (num > reNum) {
+                        // 猜大
+                        isWin(parseInt(prompt("猜大了，请重新猜想")))
+                    } else {
+                        // 猜小
+                        isWin(parseInt(prompt("猜小了，请重新猜想")))
+                    }
+                }
+            }
+
+        }
+    </script>
+</body>
+
+</html>

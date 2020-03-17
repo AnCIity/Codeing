@@ -1,0 +1,251 @@
+// Color
+@themeColor: #92d152;
+@darkColor : #242326;
+
+// Size
+@inner: 1100px;
+
+* {
+    margin : 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color          : black;
+}
+
+.inner {
+    width : @inner;
+    margin: 0 auto;
+}
+
+.pull(@vertical: 0) {
+    width  : 100%;
+    padding: @vertical calc((100vw - 6px - 100%)/2);
+    margin : 0 calc((100% - 6px - 100vw)/2);
+}
+
+header {
+    .inner {
+        display        : flex;
+        justify-content: space-between;
+
+        &>a {
+            line-height: 120px;
+
+            img {
+                vertical-align: middle;
+            }
+        }
+    }
+
+    nav {
+        a {
+            display     : inline-block;
+            height      : 120px;
+            line-height : 120px;
+            font-size   : 17px;
+            border-top  : 2px solid transparent;
+            margin-right: 30px;
+
+            &:hover {
+                color     : @themeColor;
+                border-top: 2px solid @themeColor;
+            }
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+}
+
+.mod_show {
+    text-align: center;
+    margin    : 140px 0 190px;
+
+    h2 {
+        font-size  : 60px;
+        font-weight: 400;
+    }
+
+    h3 {
+        font-size  : 24px;
+        font-weight: normal;
+        margin     : 1em 0;
+    }
+
+    .show_btn a {
+        display         : inline-block;
+        width           : 150px;
+        height          : 50px;
+        line-height     : 50px;
+        margin          : 1.4em auto;
+        background-color: @themeColor;
+        color           : white;
+        transition      : background .5s;
+
+        &:hover {
+            background: #75c032;
+        }
+
+    }
+}
+
+.mod_main {
+    margin-bottom: 60px;
+}
+
+.main_fusion {
+    display        : flex;
+    justify-content: space-between;
+    list-style     : none;
+    margin-bottom  : 50px;
+
+    li {
+        width     : 300px;
+        background: #f6f6f6;
+        padding   : 30px 20px;
+        text-align: center;
+
+        h4 {
+            color        : #333333;
+            line-height  : 30px;
+            margin-top   : 50px;
+            margin-bottom: 5px;
+        }
+
+        p {
+            color      : #999;
+            font-size  : 12px;
+            line-height: 20px;
+        }
+    }
+}
+
+.indir_head {
+    background: @themeColor;
+
+    .pull(30px);
+
+    div {
+        width      : 150px;
+        height     : 56px;
+        line-height: 56px;
+        color      : white;
+        text-align : center;
+        cursor     : pointer;
+        border     : 2px solid white;
+        margin     : 0 auto;
+
+        &:hover {
+            background: rgba(255, 255, 255, .1);
+        }
+    }
+}
+
+.indir_body {
+    h2 {
+        font-size    : 16px;
+        color        : #00cf73;
+        font-weight  : normal;
+        line-height  : 40px;
+        border-bottom: 1px solid #e1dede;
+        margin       : 45px 0 30px;
+    }
+
+    &>div {
+        display: flex;
+
+        img {
+            width       : 70%;
+            height      : 100%;
+            margin-right: 20px;
+        }
+
+        article {
+            display       : flex;
+            flex-direction: column;
+            align-content : space-between;
+            margin        : 0 15px;
+            font-size     : 13px;
+            line-height   : 20px;
+            color         : #3d3d3d;
+
+            p {
+                margin-bottom: 20px;
+
+                span {
+                    color    : @themeColor;
+                    font-size: 14px;
+                }
+            }
+
+        }
+    }
+}
+
+
+footer {
+    background: #282c2d;
+
+    .foot_body {
+        display        : flex;
+        justify-content: space-between;
+        line-height    : 50px;
+        padding-top    : 30px;
+        margin-bottom  : 80px;
+
+
+        .foot_dlist {
+            display: flex;
+
+            dt {
+                color       : white;
+                font-weight : 600;
+                font-size   : 20px;
+                margin-right: 50px;
+            }
+
+            dd {
+                a {
+                    color: #bfbfbf;
+
+                    &:hover {
+                        color: @themeColor;
+                    }
+                }
+            }
+        }
+
+        .foot_relat {
+            color     : white;
+            text-align: right;
+
+            h3 {
+                font-size: 18px
+            }
+
+            p {
+                color: #888;
+            }
+        }
+
+    }
+
+    .foot_copy {
+        background : #1e1c21;
+        color      : #888;
+        font-size  : 14px;
+        line-height: 30px;
+
+        a {
+            color: #bfbfbf;
+
+            &:hover {
+                color: @themeColor;
+            }
+        }
+    }
+}

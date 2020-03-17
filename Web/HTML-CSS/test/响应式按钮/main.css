@@ -1,0 +1,80 @@
+.box {
+	width: 200px;
+	height: 50px;
+	font-size: 28px;
+	line-height: 50px;
+	text-align: center;
+	position: relative;
+	user-select: none;
+	margin: 30px;
+}
+
+.box1:hover {
+	color: white;
+}
+
+.box1::before {
+	content: '';
+	width: 200px;
+	height: 50px;
+	background-color: pink;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	transform-origin: right center;
+	transform: scale(0, 1);
+	transition: transform 1s;
+}
+
+.box1:hover::before{
+	transform: scale(1, 1);
+	transform-origin: left center;
+}
+
+.box2:hover {
+	color: white;
+}
+
+.box2::before {
+	content: '';
+	width: 200px;
+	height: 50px;
+	background-color: pink;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	transform-origin: right bottom;
+	transform: scale(0, 0.1);
+	transition: transform 1s;
+}
+
+.box2:hover::before{
+	transform: scale(1, 1);
+	transform-origin: top left;
+}
+
+.box3:hover {
+	color: blue;
+}
+
+.box3::before {
+	content: '';
+	width: 200px;
+	height: 50px;
+	background-color: blue;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	transform-origin: bottom center;
+	transform: scale(0, 0.05);
+	transition: transform 1s;
+}
+
+.box3:hover::before{
+	transform: scale(1, 0.05);
+	transform-origin: bottom center;
+
+}

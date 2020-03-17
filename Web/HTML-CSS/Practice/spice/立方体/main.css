@@ -1,0 +1,117 @@
+body {
+	background-color: #000000;
+}
+
+#box {
+	width: 200px;
+	height: 200px;
+	margin: 200px auto 0 auto;
+	position: relative;
+	transform-style: preserve-3d;
+	transform: perspective(500px);
+	animation: xuanz 5s linear infinite;
+	background-image: url();
+}
+
+@keyframes xuanz{
+	from{transform: perspective(500px) rotateX(0deg) rotateZ(0deg);}
+	to{transform: perspective(500px) rotateX(360deg) rotateZ(360deg);}
+}
+
+
+/* 公共类 */
+.box {
+	width: 200px;
+	height: 200px;
+	position: absolute;
+	font-size: 24px;
+	color: white;
+	text-align: center;
+	user-select: none;
+	line-height: 200px;
+	opacity: 0.5;
+	background-color: #1A243C;
+	box-shadow: 0 0 100px white;
+	transition: transform 0.8s;
+}
+
+
+
+
+.box-left {
+	transform: translateX(-100px) rotateY(-90deg);
+}
+
+.box-right {
+	transform: translateX(100px) rotateY(90deg);
+}
+
+.box-top {
+	transform: translateY(-100px) rotateX(-90deg);
+}
+
+.box-bottom {
+	transform: translateY(100px) rotateX(90deg);
+}
+
+.box-ago {
+	transform: translateZ(100px);
+}
+
+.box-later {
+	transform:translateZ(-100px) rotateY(180deg);
+}
+
+
+
+
+.box-tip-left {
+	transform: translateX(-100px) rotateY(-90deg);
+}
+
+.box-tip-right {
+	transform: translateX(100px) rotateY(90deg);
+}
+
+.box-tip-top {
+	transform: translateY(-100px) rotateX(-90deg);
+}
+
+.box-tip-bottom {
+	transform: translateY(100px) rotateX(90deg);
+}
+
+.box-tip-ago {
+	transform: translateZ(100px);
+}
+
+.box-tip-later {
+	transform:translateZ(-100px) rotateY(180deg);
+}
+
+
+
+
+#box:hover .box-tip-left {
+	transform: translateX(-200px) rotateY(-90deg);
+}
+
+#box:hover .box-tip-right {
+	transform: translateX(200px) rotateY(90deg);
+}
+
+#box:hover .box-tip-top {
+	transform: translateY(-200px) rotateX(-90deg);
+}
+
+#box:hover .box-tip-bottom {
+	transform: translateY(200px) rotateX(90deg);
+}
+
+#box:hover .box-tip-ago {
+	transform: translateZ(200px);
+}
+
+#box:hover .box-tip-later {
+	transform:translateZ(-200px) rotateY(180deg);
+}

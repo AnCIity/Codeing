@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>画布学习</title>
+    </head>
+
+    <body>
+        <canvas id="canvas"></canvas>
+
+        <script>
+            var oCanvas = document.getElementById("canvas"),
+                oUndo = document.getElementById("undo"),
+                content = oCanvas.getContext("2d"),
+                WIDTH,
+                HEIGHT;
+
+            WIDTH = document.documentElement.clientWidth;
+            HEIGHT = document.documentElement.clientHeight;
+
+            oCanvas.width = WIDTH;
+            oCanvas.height = HEIGHT;
+        </script>
+        <script src="./基础操作.js"></script>
+    </body>
+</html>

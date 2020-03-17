@@ -1,0 +1,42 @@
+#group {
+	width: 300px;
+	background-color: #f7f7f7;
+	padding: 30px 50px;
+	margin: 0 auto;
+}
+
+.group-name {
+	color: green;
+	padding-left: 5px;
+}
+
+.group-chunk {
+	user-select: none;
+}
+
+.group-name h4 {
+	font-weight: normal;
+}
+
+.chunk-title h5 {
+	font-weight: normal;
+	font-size: 15px;
+	margin: 15px 0 5px 5px;
+}
+
+.chunk-title h5 a {
+	color: #333333;
+	text-decoration: none;
+}
+
+.chunk-a a {
+	text-decoration: none;
+	color: #017a85;
+	font-size: 14px;
+	margin: 5px;
+}
+
+#group a:hover{
+	color: white;
+	background-color: #017a85;
+}

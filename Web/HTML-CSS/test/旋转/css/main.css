@@ -1,0 +1,68 @@
+:root {
+	--w: 300px;
+}
+
+body {
+	perspective: 600px;
+}
+
+.box {
+	position: relative;
+	transform-style: preserve-3d;
+	transform: rotateX(-24deg);
+	margin: 100px auto;
+	width: 200px;
+	height: 300px;
+	animation: Rotate 10s linear infinite;
+	user-select: none;
+	text-align: center;
+	line-height: 300px;
+	color: red;
+	font-size: 50px;
+}
+
+.chunk {
+	width: 200px;
+	height: 300px;
+	border: 2px solid red;
+	position: absolute;
+}
+
+.chunk:nth-child(1) {
+	transform: rotateY(180deg) translateZ(var(--w));
+}
+
+.chunk:nth-child(2) {
+	transform: rotateY(135deg) translateZ(var(--w));
+}
+
+.chunk:nth-child(3) {
+	transform: rotateY(90deg) translateZ(var(--w));
+}
+.chunk:nth-child(4) {
+	transform: rotateY(45deg) translateZ(var(--w));
+}
+
+.chunk:nth-child(5) {
+	 transform: translateZ(var(--w));
+}
+
+.chunk:nth-child(6) {
+	transform: rotateY(-45deg) translateZ(var(--w));
+}
+
+.chunk:nth-child(7) {
+	transform: rotateY(-90deg) translateZ(var(--w));
+}
+.chunk:nth-child(8) {
+	transform: rotateY(-135deg) translateZ(var(--w));
+}
+
+@keyframes Rotate{
+	from{
+		transform: rotateX(-24deg) rotateY(0deg);
+	}
+	to{
+		transform: rotateX(-24deg) rotateY(360deg);
+	}
+}

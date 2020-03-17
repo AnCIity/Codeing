@@ -1,0 +1,41 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+
+.clearfix:after {
+	content: '';
+	display: block;
+	clear: both;
+}
+
+.wrap {
+	width: 100%;
+	overflow: hidden;
+	border: 1px solid red;
+}
+
+
+
+.chunk {
+	float: left;
+	padding-bottom: 300px;
+	margin-bottom: -300px;
+}
+
+.chunk1 {
+	width: 30%;
+	background: pink;
+}
+
+.chunk2 {
+	background: gray;
+	width: 40%;
+
+}
+
+.chunk3 {
+	width: calc(30% - 2px);
+	background: seagreen;
+	border: 1px solid yellow;
+}

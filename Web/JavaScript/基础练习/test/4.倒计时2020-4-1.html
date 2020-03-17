@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <time id="time"></time>
+
+    <script>
+
+        var oTime = document.getElementById("time");
+
+        setInterval(() => {
+            oTime.innerHTML = countDown("2020-4-1")
+        }, 1000);
+
+        function countDown(time) {
+            var nowDate = new Date();
+            var newDate = new Date(time);
+
+            var interval = parseInt((newDate - nowDate) / 1000)
+            var day = parseInt(interval / 86400)
+            var hour = parseInt(interval % 86400 / 3600)
+            var minute = parseInt(interval % 3600 / 60)
+            var second = interval % 60
+
+            return `${toTwo(day)}天${toTwo(hour)}时${toTwo(minute)}分${toTwo(second)}秒`
+        }
+
+
+        function toTwo(time) {
+            return time >= 10 ? time : "0" + time
+        }
+
+    </script>
+
+</body>
+
+</html>

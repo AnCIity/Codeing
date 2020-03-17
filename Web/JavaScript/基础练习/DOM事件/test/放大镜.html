@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #small {
+            overflow: hidden;
+            width: 130px;
+            height: 130px;
+            background-image: url(./img/small.jpg);
+            background-color: blue;
+        }
+
+        #shade {
+            background-color: rgba(255, 0, 0, .4);
+            width: 50px;
+            height: 50px;
+            pointer-events: none;
+        }
+
+        #big {
+            display: none;
+            background-image: url(./img/big.jpg);
+            background-repeat: no-repeat;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="small">
+        <div id="shade"></div>
+    </div>
+    <div id="big"></div>
+
+
+    <script>
+
+        var oSmall = document.getElementById("small");
+        var oShade = document.getElementById("shade");
+        var oBig = document.getElementById("big");
+
+        // 比列
+        var b = 80 / 13;
+
+        // 预览框宽高
+        oBig.style.width = b * 50 + "px";
+        oBig.style.height = b * 50 + "px";
+
+        oSmall.onmousemove = function (ev) {
+            var ev = window.ev || ev;
+
+            // 鼠标移入显示遮罩和预览框
+            oShade.style.display = "block";
+            oBig.style.display = "block";
+
+            // 遮罩距左上距离，鼠标居遮罩中点
+            let left = ev.pageX - oShade.offsetWidth / 2;
+            let top = ev.pageY - oShade.offsetHeight / 2;
+
+            // left 限制
+            left = left < 0 ? 0 : left
+            left = left >= oSmall.offsetWidth - oShade.offsetWidth ? oSmall.offsetWidth - oShade.offsetWidth : left
+
+            // top 限制
+            top = top < 0 ? 0 : top
+            top = top >= oSmall.offsetHeight - oShade.offsetHeight ? oSmall.offsetHeight - oShade.offsetHeight : top
+
+            // 修改遮罩层位置
+            oShade.style.margin = `${top}px 0 0 ${left}px`;
+
+            // 修改预览框背景图定位
+            oBig.style.backgroundPosition = `-${b * left}px -${b * top}px`
+        }
+
+        oSmall.onmouseout = function () {
+            // 鼠标移出隐藏遮罩和预览框
+            oShade.style.display = "none";
+            oBig.style.display = "none";
+        }
+
+    </script>
+</body>
+
+</html>

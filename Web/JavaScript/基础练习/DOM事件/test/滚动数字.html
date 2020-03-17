@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./main.js"></script>
+</head>
+
+<body>
+    <input type="text">
+    <script>
+        var oIn = document.getElementsByTagName("input")[0];
+
+        // 添加事件
+        bindEvent(oIn, "DOMMouseScroll", func);
+        oIn.onmousewheel = func;
+
+        // 初始值
+        var i = 0;
+        // 事件触发函数
+        function func(ev) {
+            var ev = window.event || ev;
+
+            mouseWheelDirection(ev) ? i++ : i--;
+            oIn.value = i;
+        }
+
+        // 检测滚动方向
+        function mouseWheelDirection(ev) {
+            let key = ev.wheelDelta ? ev.wheelDelta : ev.detail;
+            let top = Math.abs(key) == 120 ? 120 : -3;
+            return key == top ? true : false;
+        }
+    </script>
+</body>
+
+</html>

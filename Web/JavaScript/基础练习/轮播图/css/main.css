@@ -1,0 +1,79 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.box {
+    width: 700px;
+    height: 525px;
+    position: relative;
+    margin: 50px auto;
+    overflow: hidden;
+}
+
+img {
+    position: absolute;
+    opacity: 0;
+}
+
+img:first-child {
+    opacity: 1;
+}
+
+ul {
+    width: 100%;
+    list-style: none;
+    position: absolute;
+    bottom: 13px;
+    text-align: center;
+    user-select: none;
+}
+
+ul li {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: #135089;
+    border-radius: 50%;
+    margin: 10px;
+    cursor: pointer;
+}
+
+ul li.cut {
+    background-color: white;
+}
+
+.option i {
+    position: absolute;
+    top: 50%;
+    margin-top: -35px;
+    width: 35px;
+    height: 70px;
+    line-height: 70px;
+    color: white;
+    text-align: center;
+    font-size: 28px;
+    background-color: rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: all 0.4s;
+}
+
+.option i:hover {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.option i:first-child {
+    left: -35px;
+}
+
+.option i:last-child {
+    right: -35px;
+}
+
+.box:hover .option i:first-child {
+    left: 0;
+}
+
+.box:hover .option i:last-child {
+    right: 0;
+}

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>用户注册</title>
+		<style type="text/css">
+			#showSign {
+				display: flex;
+				justify-content: center;
+				margin-top: 100px;
+			}
+		</style>
+	</head>
+	<body>
+
+		<div id="showSign">
+
+			<form action="#" method="get">
+
+				<table border="1" cellspacing="0" cellpadding="5" style="margin-bottom: 15px;">
+					<thead>
+						<tr>
+							<th colspan="4">用户注册</th>
+						</tr>
+					</thead>
+
+
+					<tbody>
+
+						<tr>
+							<td>用户名</td>
+							<td><input type="text" name="username" /></td>
+							<td>密码</td>
+							<td><input type="password" name="password" /></td>
+						</tr>
+
+						<tr>
+							<td>性别</td>
+							<td>
+								<input type="radio" name="sex" value="man" />男
+								<input type="radio" name="sex" value="woman" checked="checked"/>女
+							</td>
+							<td>爱好</td>
+							<td>
+								<input type="checkbox" name="hobby" value="swim" />游泳
+								<input type="checkbox" name="hobby" value="basketball" />篮球
+								<input type="checkbox" name="hobby" value="football" />足球
+							</td>
+						</tr>
+
+						<tr>
+							<td>所在地</td>
+							<td>
+								<select name="city">
+									<option value="beijing">北京</option>
+									<option value="shanghai" selected="selected">上海</option>
+									<option value="shenzhen">深圳</option>
+								</select>
+							</td>
+							<td>用户头像</td>
+							<td><input type="file" name="file" /></td>
+						</tr>
+
+						<tr height="160">
+							<td>自我介绍：</td>
+							<td colspan="3">
+								<textarea style="width: 100%; height: 160px;">积极向上，快乐阳光！</textarea>
+							</td>
+						</tr>
+						
+					</tbody>
+
+				</table>
+
+				<input type="submit" value="提交" />
+				<input type="reset" value="重置" />
+
+			</form>
+
+		</div>
+
+
+	</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>层级菜单</title>
+    <style type="text/css">
+        body {
+            font-family: 'Microsoft Yahei';
+        }
+
+        body,
+        ul {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .menu {
+            width: 200px;
+            margin: 20px auto 0;
+        }
+
+        .menu .level1,
+        .menu li ul a {
+            display: block;
+            width: 200px;
+            height: 30px;
+            line-height: 30px;
+            text-decoration: none;
+            background-color: #3366cc;
+            color: #fff;
+            font-size: 16px;
+            text-indent: 10px;
+        }
+
+        .menu .level1 {
+            border-bottom: 1px solid #afc6f6;
+
+        }
+
+        .menu li ul a {
+            font-size: 14px;
+            text-indent: 20px;
+            background-color: #7aa1ef;
+
+        }
+
+        .menu li ul li {
+            border-bottom: 1px solid #afc6f6;
+        }
+
+        .menu li ul {
+            display: none;
+        }
+
+        .menu li ul.current {
+            display: block;
+        }
+
+        .menu li ul li a:hover {
+            background-color: #f6b544;
+        }
+    </style>
+    <script type="text/javascript" src="http://lib.nanzc.com/js/jq/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript">
+        var data = {
+            list: [
+                {
+                    title: "水果",
+                    items: ["苹果", "梨子", "葡萄", "火龙果"]
+                }, {
+                    title: "海鲜",
+                    items: ["蛏子", "扇贝", "龙虾", "象拔蚌"]
+                }, {
+                    title: "肉类",
+                    items: ["内蒙古羊肉", "进口牛肉", "野猪肉"]
+                }, {
+                    title: "蔬菜",
+                    items: ["娃娃菜", "西红柿", "西芹", "胡萝卜"]
+                }, {
+                    title: "速冻",
+                    items: ["冰淇淋", "湾仔码头", "海参", "牛肉丸"]
+                }
+            ]
+        }
+
+        $(function () {
+            // 插入数据
+            data.list.forEach(element => {
+                let ulStr = "";
+                element.items.forEach(value => {
+                    ulStr += `<li><a href="#">${value}</a></li>`
+                })
+
+                $(".menu").append(`<li>
+                <a href="#" class="level1">${element.title}</a>
+                <ul>
+                    ${ulStr}
+                </ul>
+            </li>`)
+            })
+
+            // 设置初始展开
+            $("li:eq(0) ul").addClass("current")
+
+            //当点击标题的时候
+            $('.level1').click(function () {
+                // 此处添加代码
+
+                // 清空处当前外所有展开项
+                $(".level1").not(this).next().removeClass("current");
+
+                // 设置当前展开项状态
+                $(this).next().toggleClass("current")
+
+            });
+        })
+    </script>
+</head>
+
+<body>
+    <ul class="menu"></ul>
+</body>
+
+</html>

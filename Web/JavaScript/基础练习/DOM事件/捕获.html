@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div style="background-color: red;" id="box1">
+        Box1
+        <div style="background-color: yellow;" id="box2">
+            Box2
+            <div style="background-color: blue;" id="box3">
+                Box3
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        var oDiv = document.getElementsByTagName("div");
+
+        function fun(ev) {
+            alert(this.id)
+        }
+
+
+        // true：捕获 false：冒泡
+        oDiv[0].addEventListener("click", fun, false)
+        oDiv[1].addEventListener("click", fun, true)
+        oDiv[2].addEventListener("click", fun, true)
+
+    </script>
+</body>
+
+</html>

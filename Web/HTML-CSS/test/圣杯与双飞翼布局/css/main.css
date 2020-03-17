@@ -1,0 +1,71 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+
+.clearfix:after {
+	content: '';
+	display: block;
+	clear: both;
+}
+
+.item {
+	margin: 100px auto;
+}
+
+#item-grail {
+	padding: 0 200px;
+}
+
+#item-grail .grail-chunk {
+	float: left;
+	position: relative;
+}
+
+#item-grail .grail-chunk1 {
+	width: 100%;
+	background: yellow;
+}
+
+#item-grail .grail-chunk2 {
+	width: 200px;
+	background: green;
+	margin-left: -100%;
+	left: -200px;
+}
+
+#item-grail .grail-chunk3 {
+	width: 200px;
+	background: red;
+	margin-left: -200px;
+	right: -200px;
+}
+
+
+/* 双飞翼 */
+
+#item-wing .wing-chunk {
+	float: left;
+}
+
+#item-wing .wing-chunk1 {
+	width: 100%;
+	background: yellow;
+}
+
+#item-wing .wing-chunk2 {
+	width: 200px;
+	background: green;
+	margin-left: -100%;
+}
+
+#item-wing .wing-chunk3 {
+	width: 200px;
+	background: red;
+	margin-left: -200px;
+}
+
+#item-wing .chunk1-inner {
+	margin: 0 200px;
+	background: #0000FF;
+}

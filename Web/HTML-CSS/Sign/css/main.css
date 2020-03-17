@@ -1,0 +1,271 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+
+a {
+	color: #000;
+	text-decoration: none;
+}
+
+body {
+	background: gray;
+}
+
+/* main */
+
+.sign {
+	width: 900px;
+	height: 580px;
+	background-color: white;
+	border-radius: 15px;
+	overflow: hidden;
+	position: relative;
+	margin: 0 auto;
+}
+
+/* 欢迎层 */
+
+.greet {
+	position: absolute;
+	right: 550px;
+	width: 350px;
+	height: 580px;
+	overflow: hidden;
+	z-index: 2;
+	box-sizing: border-box;
+	color: white;
+	text-align: center;
+}
+
+.greet-charImg {
+	position: relative;
+	left: 0;
+	width: 900px;
+	height: 580px;
+	background: url(../img/13bc596aefe6126dfdadfad0b52310fb.jpg) 0;
+	background-size: cover;
+}
+
+.char-show {
+	position: relative;
+	left: 0;
+}
+
+.greet-char {
+	width: 350px;
+	height: 580px;
+	position: absolute;
+	box-sizing: border-box;
+	padding: 200px 30px 0;
+}
+
+.char-left {
+	left: 0;
+}
+
+.char-right {
+	right: -20px;
+}
+
+.greet-char h2 {
+	font-size: 30px;
+	margin-bottom: 20px;
+}
+
+.greet-char p {
+	line-height: 24px;
+	font-size: 14px;
+	margin-bottom: 30px;
+}
+
+.char-sign {
+	width: 180px;
+	height: 46px;
+	border: 2px solid transparent;
+	border-radius: 50px;
+	line-height: 46px;
+	font-size: 13px;
+	user-select: none;
+	margin: 0 auto;
+}
+
+.greet-btn {
+	width: 180px;
+	height: 46px;
+	border: 2px solid white;
+	border-radius: 50px;
+	margin: 0 auto;
+	cursor: pointer;
+	user-select: none;
+	position: absolute;
+	top: 338px;
+	left: 83px;
+}
+
+/* 用户层 */
+
+.user {
+	width: 550px;
+	height: 580px;
+	background: white;
+	position: absolute;
+	right: 0;
+	z-index: 1;
+	text-align: center;
+}
+
+.user-oper {
+	width: 340px;
+	margin: 80px auto;
+}
+
+.user-oper h2 {
+	font-size: 34px;
+	color: #49ada0;
+}
+
+.user-icon {
+	margin: 20px 0 30px;
+}
+
+.user-icon i {
+	display: inline-block;
+	width: 40px;
+	height: 40px;
+	line-height: 40px;
+	border: 1px solid #DDD;
+	border-radius: 50%;
+	font-size: 24px;
+	text-align: center;
+	margin: 5px;
+}
+
+.user-oper p {
+	color: #999;
+	font-size: 14px;
+	margin-bottom: 10px;
+}
+
+.user-form {
+	margin-top: 10px;
+}
+
+.user-form input:not([type=submit]) {
+	width: 100%;
+	height: 50px;
+	background-color: #f5f8f8;
+	border: none;
+	outline: none;
+	box-sizing: border-box;
+	padding: 10px 20px;
+	margin: 5px 0;
+	color: #49ada0;
+	font-size: 14px;
+}
+
+.user-form a {
+	display: none;
+	margin: 15px auto;
+	width: 50%;
+	height: 30px;
+	line-height: 30px;
+	font-size: 14px;
+	color: #333;
+	border-bottom: 2px solid #edf5f3;
+}
+
+.user-form input[type=submit] {
+	width: 180px;
+	height: 50px;
+	line-height: 50px;
+	font-size: 14px;
+	color: white;
+	background: #49ada0;
+	border-radius: 50px;
+	margin: 20px auto;
+	outline: none;
+	border: none;
+	cursor: pointer;
+	user-select: none;
+}
+
+@keyframes greetIn {
+	0% {
+		width: 350px;
+		right: 550px;
+	}
+	100% {
+		width: 350px;
+		right: 0;
+	}
+}
+
+@keyframes userIn {
+	0% {
+		right: 0;
+	}
+	100% {
+		right: 350px;
+	}
+}
+
+@keyframes greetUp {
+	0% {
+		width: 350px;
+		left: 550px;
+	}
+	100% {
+		width: 350px;
+		left: 0;
+	}
+}
+
+@keyframes userUp {
+	from {
+		right: 350px;
+	}
+	to {
+		right: 0;
+	}
+}
+
+@keyframes greetCharImgIn {
+	from {
+		left: 0;
+		background-position: 0;
+	}
+	to {
+		left: -550px;
+		background-position: 50px;
+	}
+}
+
+@keyframes greetCharImgUp {
+	from {
+		left: -550px;
+		background-position: 50px;
+	}
+	to {
+		left: 0;
+		background-position: 0;
+	}
+}
+
+@keyframes CharShowIn {
+	from {
+		left: 0;
+	}
+	to {
+		left: -20px;
+	}
+}
+
+@keyframes CharShowUp {
+	from {
+		left: -20px;
+	}
+	to {
+		left: 0;
+	}
+}

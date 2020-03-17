@@ -1,0 +1,153 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	display: flex;
+	justify-content: center;
+}
+
+.item {
+	margin: 100px 0;
+}
+
+/* 第一题 */
+
+/* 表头 */
+
+.one-head {
+	border-bottom: 1px solid #dddddd;
+	background-color: white;
+	font-size: 19px;
+	line-height: 40px;
+}
+
+/* 第三列中的块 */
+
+.one-chunk {
+	height: 18px;
+	background-color: #fc910d;
+}
+
+/* 第一列 */
+
+#item-one tbody td:first-child {
+	color: #7e7e7e;
+	font-weight: bold;
+}
+
+/* 第二列 */
+
+#item-one tbody td:nth-child(2) {
+	color: #7f7f7f;
+}
+
+/* 所有tbody下单元格 */
+
+#item-one tbody td {
+	line-height: 25px;
+}
+
+/* 第二题 */
+
+#item-two {
+	width: 260px;
+}
+
+#item-two h5 {
+	margin: 12px 0;
+}
+
+#item-two ul {
+	list-style-type: none;
+	margin: 10px 0;
+}
+
+#item-two li {
+	display: inline;
+	font-size: 14px;
+}
+
+#item-two li a {
+	text-decoration: none;
+	color: black;
+}
+
+#item-two a span {
+	color: #ff5d31;
+}
+
+/* 第三题 */
+
+#item-three>div {
+	margin: 10px 0;
+	font-size: 12px;
+}
+
+#item-three p {
+	display: inline-block;
+	color: #17bac1;
+	width: 50px;
+}
+
+#item-three ul {
+	list-style-type: none;
+	display: inline;
+}
+
+#item-three li {
+	display: inline;
+	margin: 0 3px;
+}
+
+#item-three li a {
+	text-decoration: none;
+	color: #666666;
+}
+
+.three-color {
+	color: #ff6600 !important;
+}
+
+#item-three li:nth-child(2n) {
+	color: #d5ccd5;
+}
+
+/* 第四题 */
+
+#item-four {
+	width: 850px;
+	height: 300px;
+	background-color: #3383e2;
+	text-align: center;
+	color: white;
+	box-sizing: border-box;
+	padding: 10px 0;
+}
+
+#item-four h2 {
+	font-size: 36px;
+	font-weight: normal;
+	line-height: 100px;
+}
+
+#item-four h1 {
+	font-size: 48px;
+	line-height: 70px;
+}
+
+#item-four p {
+	font-size: 18px;
+	line-height: 70px;
+}
+
+#item-four h3 {
+	font-size: 24px;
+	line-height: 40px;
+}
+
+#item-four span {
+	color: #fffc01;
+	font-weight: bold;
+}

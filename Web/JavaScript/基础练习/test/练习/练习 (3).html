@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+
+<body style="background: #000">
+
+
+	<script src="./js/jquery.js"></script>
+	<script>
+		// 此处添加代码
+
+		// 事件委托---删除点击 img
+		$("body").on("click", "img", function () {
+			$(this).remove()
+		})
+
+		// 定时生成
+		setInterval(() => {
+			let w = random(25, 40);
+			let h = random(35, 60);
+			$("body").append(`<img src="star.png" width="${w}px" height="${h}px" style="position: absolute; left: ${random(0, $(window).width() - w)}px; top: ${random(0, $(window).height() - h)}px; ">`)
+		}, 1500);
+
+		// 获取随机数 包括上限和下限值
+		function random(min, max) {
+			return Math.floor(Math.random() * (max - min + 1)) + min;
+		} 
+	</script>
+</body>
+
+</html>

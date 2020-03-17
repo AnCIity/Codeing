@@ -1,0 +1,305 @@
+#adream{
+	margin-top: 100px;
+}
+
+.header {
+	width: 225px;
+	height: 200px;
+	background-color: #0dabd2;
+	border-radius: 100px;
+	border: #266167 solid 1px;
+	margin: 0 auto;
+	position: relative;
+}
+
+.face {
+	width: 185px;
+	height: 145px;
+	background-color: white;
+	border: black solid 1px;
+	border-radius: 50%;
+	position: absolute;
+	bottom: 0px;
+	left: 20px;
+}
+
+.eye {
+	width: 50px;
+	height: 60px;
+	border: black solid 1px;
+	border-radius: 25px;
+	background-color: white;
+}
+
+.eye-left {
+	position: absolute;
+	top: -25px;
+	left: 41px;
+}
+
+.eye-right {
+	position: absolute;
+	top: -25px;
+	right: 41px;
+}
+
+.eyeball{
+	width: 10px;
+	height: 10px;
+	background-color: black;
+	border-radius: 50%;
+	position: absolute;
+	top: 25px;
+}
+
+.eyeball-left {
+	right: 10px;
+}
+
+.eyeball-right {
+	left: 10px;
+}
+
+.nose {
+	width: 20px;
+	height: 20px;
+	background-color: #c33609;
+	border: black solid 1px;
+	border-radius: 9px;
+	position: absolute;
+	left: calc(50% - 10px);
+	top: 26px;
+}
+
+.nose-spot {
+	width: 0;
+	height: 0;
+	background-color: white;
+	position: absolute;
+	top: calc(50% - 2.5px);
+	right: 5px;
+	box-shadow:0px 0px 4px 4px #FFFFFF;
+}
+
+.beard {
+	width: 40px;
+	height: 1px;
+	background-color: black;
+}
+
+.beard-left1 {
+	position: absolute;
+	top: 65px;
+	left: 15px;
+}
+
+.beard-left2 {
+	position: absolute;
+	top: 50px;
+	left: 15px;
+	transform: rotate(15deg);
+}
+
+.beard-left3 {
+	position: absolute;
+	top: 80px;
+	left: 15px;
+	transform: rotate(-15deg);
+}
+
+.nose-s {
+	width: 2px;
+	height: 65px;
+	background-color: black;
+	position: absolute;
+	left: calc(50% - 1px);
+	top: 48px;
+}
+
+.beard-right1 {
+	position: absolute;
+	top: 65px;
+	right: 15px;
+}
+
+.beard-right2 {
+	position: absolute;
+	top: 50px;
+	right: 15px;
+	transform: rotate(-15deg);
+}
+
+.beard-right3 {
+	position: absolute;
+	top: 80px;
+	right: 15px;
+	transform: rotate(15deg);
+}
+
+.mouth {
+	width: 110px;
+	height: 40px;
+	background-color: transparent;
+	border-bottom: black solid 2px;
+	border-radius: 50%;
+	position: absolute;
+	left: calc(50% - 55px);
+	top: 72px;
+}
+
+.split {
+	width: 160px;
+	height: 13px;
+	background-color: #ce3300;
+	border: black solid 1px;
+	border-radius: 8px;
+	position: absolute;
+	bottom: -2px;
+	left: calc(50% - 80px)
+}
+
+.small {
+	width: 30px;
+	height: 30px;
+	background-color: #f1ee15;
+	border: black solid 1.5px;
+	border-radius: 18px;
+	position: absolute;
+	top: 3px;
+	left: calc(50% - 15px);
+}
+
+.small-wire {
+	width: 30px;
+	height: 1px;
+	background-color: black;
+}
+
+.small-wire1 {
+	position: absolute;
+	top: 7px;
+}
+
+.small-wire2 {
+	position: absolute;
+	top: 10px;
+}
+
+.small-dian {
+	width: 9px;
+	height: 9px;
+	background-color: black;
+	border-radius: 50%;
+	position: absolute;
+	left: calc(50% - 4.5px);
+	top: 14px;
+}
+
+.small-shu {
+	width: 2px;
+	height: 8px;
+	background-color: black;
+	position: absolute;
+	left: calc(50% - 1px);
+	top: 22px;
+}
+
+.body {
+	width: 158px;
+	height: 120px;
+	background-color: #0dabd2;
+	margin: 0 auto;
+	border-color: black;
+	border-style: solid;
+	border-width: 0 1px 1px 1px;
+	position: relative;
+	z-index: -1;
+}
+
+.tripe{
+	width: 120px;
+	height: 120px;
+	background-color: white;
+	border: black solid 2px;
+	border-radius: 50%;
+	position: absolute;
+	top: -30px;
+	left: calc(50% - 62px);
+}
+
+.sack {
+	width: 90px;
+	height: 45px;
+	border: black 2px solid;
+	position: absolute;
+	top: calc(70% - 22.5px);
+	left: calc(50% - 45px);
+	border-radius: 0 0 50px 50px;
+}
+
+.hand-left {
+	position: absolute;
+	top: -10px;
+	left: -35px;
+	transform: rotate(60deg);
+}
+
+.hand-right {
+	position: absolute;
+	top: -10px;
+	right: -35px;
+	transform: rotate(-60deg);
+}
+
+.hand-zhu {
+	width: 32px;
+	height: 60px;
+	background-color: #0dabd2;
+	border-color: black;
+	border-style: solid;
+	border-width: 0 1px 0px 1px;
+}
+
+.hand-yuan {
+	width: 40px;
+	height: 40px;
+	background-color: white;
+	border: 2px solid black;
+	border-radius: 45%;
+	position: absolute;
+	top: 25px;
+	left: calc(50% - 20px);
+}
+
+.dang {
+	width: 20px;
+	height: 10px;
+	background-color: white;
+	border-radius: 15px 15px 0 0;
+	position: absolute;
+	bottom: -1px;
+	left: calc(50% - 10px);
+	border-style: solid;
+	border-color: black;
+	border-width: 2px 2px 0 2px;
+}
+
+.footer {
+	width: 85px;
+	height: 24px;
+	background-color: white;
+	border: 1.5px solid black;
+	position: absolute;
+	bottom: -25px;
+	
+}
+
+.footer-left {
+	left: -15px;
+	border-radius: 20px 10px 10px 10px;
+}
+
+.footer-right {
+	right: -15px;
+	border-radius: 10px 20px 10px 10px;
+}

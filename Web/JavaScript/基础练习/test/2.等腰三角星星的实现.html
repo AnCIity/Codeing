@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        document.write(get(5))
+
+        function get(num) {
+            let str = "";
+            for (let i = 1; i <= num; i++) {
+                for (let n = 1; n <= i; n++) {
+                    str += "*"
+                }
+                str += "<br />";
+            }
+            return str
+        }
+    </script>
+</body>
+
+</html>

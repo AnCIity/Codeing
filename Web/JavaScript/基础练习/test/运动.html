@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../main.js"></script>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background: red;
+            float: left;
+            margin-right: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div></div>
+    <div></div>
+    <div></div>
+
+    <script>
+
+        var oDiv = document.getElementsByTagName("div");
+
+        for (let i = 0; i < oDiv.length; i++) {
+            oDiv[i].onmouseover = function () {
+                bufferMove(this, { "height": 200, "width": 100 }, 10)
+            }
+            oDiv[i].onmouseout = function () {
+                bufferMove(this, { "height": 100, "width": 100 }, 10)
+            }
+        }
+
+        function bufferMove(elem, attrs, time) {
+            clearInterval(parseInt(elem.timer));
+            elem.timer = setInterval(function () {
+                var flag = true;
+
+                for (const key in attrs) {
+                    // 获取当前值
+                    if (key === "opacity") {
+                        var cur = parseInt(getStyle(elem, key) * 100);
+                    } else {
+                        var cur = parseInt(getStyle(elem, key));
+                    }
+
+                    // 计算步长
+                    var speed = (attrs[key] - cur) / time;
+                    speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
+
+                    // 清除定时器
+                    if (cur != attrs[key]) {
+                        flag = false;
+                    }
+
+                    // 让div移动
+                    if (key === "opacity") {
+                        elem.style[key] = (cur + speed) / 100;
+                        elem.style.filter = 'alpha(opacity=' + (cur + speed) + ')';
+                    } else {
+                        elem.style[key] = cur + speed + "px";
+                    }
+                }
+
+                if (flag) {
+                    clearInterval(parseInt(elem.timer));
+                }
+
+            }, 30);
+
+        }
+
+    </script>
+
+</body>
+
+</html>

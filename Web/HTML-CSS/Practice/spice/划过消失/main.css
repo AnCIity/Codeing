@@ -1,0 +1,14 @@
+#box {
+	width: 1000px;
+	height: 500px;
+	background-image: url(img.jpg);
+}
+
+#box>div {
+	width: 48px;
+	height: 48px;
+	border: 1px solid white;
+	float: left;
+	background-color: black;
+	user-select: none;
+}

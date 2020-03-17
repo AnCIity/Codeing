@@ -1,0 +1,53 @@
+.box {
+	width: 200px;
+	height: 200px;
+	border: 1px solid black;
+	margin-top: 10px;
+}
+
+.box11 {
+	background: linear-gradient(to top left ,red 45%, blue 55%);
+}
+
+.box12 {
+	background: linear-gradient(-135deg ,red 45%, blue 55%);
+}
+
+.box13 {
+	background: repeating-linear-gradient(to right,red 10%, blue 20%)
+}
+
+
+.box21 {
+	border-radius: 50%;
+	background: radial-gradient(red, blue);
+	animation: xuanzhuan 1s infinite;
+}
+@keyframes xuanzhuan{
+	0%{
+		transform: rotate(0deg);
+		background: radial-gradient(yellow, blue, red);
+		width: 200px;
+		}
+	100%{transform: rotate(360deg);background: radial-gradient(red, yellow, blue);width: 300px;}
+}
+
+.box22 {
+	background: radial-gradient(100% 100%, red, blue);
+}
+
+.box23 {
+	background: radial-gradient(closest-side at 50% 10%, red, blue);
+}
+
+.box24 {
+	background: radial-gradient(farthest-side at 50% 10%, red, blue);
+}
+
+.box25 {
+	background: radial-gradient(closest-corner at 50% 10%, red, blue);
+}
+
+.box26 {
+	background: radial-gradient(farthest-corner at 50% 10%, red, blue);
+}

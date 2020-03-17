@@ -1,0 +1,92 @@
+body {
+	perspective: 2000px;
+}
+
+.box{
+	position: relative;
+	transform-style: preserve-3d;
+	width: 400px;
+	height: 600px;
+	margin: 30px auto;
+	transform: rotateX(-16deg) rotateY(30deg);
+}
+
+.back {
+	position: absolute;
+	width: 400px;
+	height: 600px;
+	border: 2px solid black;
+}
+
+.left {
+	position: absolute;
+	width: 200px;
+	height: 600px;
+	border: 2px solid black;
+	transform-origin: left;
+	transform: rotateY(-90deg);
+}
+
+.right {
+	position: absolute;
+	right: 0;
+	width: 200px;
+	height: 600px;
+	border: 2px solid black;
+	transform-origin: right;
+	transform: rotateY(90deg);
+}
+
+.top {
+	position: absolute;
+	width: 400px;
+	height: 200px;
+	border: 2px solid black;
+	transform-origin: top;
+	transform: rotateX(90deg);
+}
+
+.bottom {
+	position: absolute;
+	bottom: 0;
+	width: 400px;
+	height: 200px;
+	border: 2px solid black;
+	transform-origin: bottom;
+	transform: rotateX(-90deg);
+}
+
+
+.chunk {
+	width: 400px;
+	height: 200px;
+}
+
+
+
+.chunk-front {
+	position: absolute;
+	width: 400px;
+	height: 200px;
+	background: #6494ec;
+	border: 2px solid black;
+	transform: translateZ(200px);
+}
+
+
+.chunk-front:hover {
+	transform: translateZ(300px);
+}
+
+.chunk-bottom {
+	position: absolute;
+	width: 400px;
+	height: 200px;
+	background: #bb8e8e;
+	transform-origin: bottom;
+	transform: rotateX(-90deg);
+}
+
+.chunk-front:hover+.chunk-bottom {
+	transform: rotateX(-90deg) translateY(-100px);
+}

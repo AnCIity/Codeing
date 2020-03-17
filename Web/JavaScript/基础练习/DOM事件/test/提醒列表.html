@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TODO</title>
+    <script src="./main.js"></script>
+</head>
+
+<body>
+    <ul id="list">
+        <li>
+            <p>列表1</p>
+            <div>
+                <button>amend</button>
+                <button>delete</button>
+            </div>
+        </li>
+        <li>
+            <p>列表2</p>
+            <div>
+                <button>amend</button>
+                <button>delete</button>
+            </div>
+        </li>
+    </ul>
+    <button id="add">添加</button>
+
+    <script>
+
+        var oUl = document.getElementById("list");
+        var oAdd = document.getElementById("add");
+
+        // 父元素事件委托
+        oUl.onclick = function (ev) {
+            var ev = window.event || ev;
+            var target = ev.target || ev.srcElement
+
+            switch (target.innerHTML) {
+                // 修改
+                case "amend":
+                    let value = window.prompt();
+                    if (value != null && value != "") {
+                        target.parentNode.parentNode.getElementsByTagName("p")[0].innerHTML = value;
+                    }
+                    break;
+
+                // 删除
+                case "delete":
+                    oUl.removeChild(target.parentNode.parentNode);
+                    break;
+            }
+        }
+
+        // 添加
+        oAdd.onclick = function () {
+
+            let value = window.prompt();
+            if (value != null && value != "") {
+                addElement(oUl, "li", `<p>${value}</p><div><button>amend</button><button>delete</button></div>`)
+            }
+
+        }
+
+
+    </script>
+</body>
+
+</html>

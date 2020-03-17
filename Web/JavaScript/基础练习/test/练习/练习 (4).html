@@ -1,0 +1,32 @@
+<html>
+
+<head>
+
+</head>
+
+<body>
+    完成foo()函数的内容，要求能够弹出对话框提示当前选中的是第几个单选框。
+    <form name="form1" onsubmit="return foo();">
+        <input type="radio" name="radioGroup" />
+        <input type="radio" name="radioGroup" />
+        <input type="radio" name="radioGroup" />
+        <input type="radio" name="radioGroup" />
+        <input type="radio" name="radioGroup" />
+        <input type="radio" name="radioGroup" />
+        <input type="submit" />
+    </form>
+</body>
+<script>
+    function foo() {
+        // 在此处添加代码 
+        var elements = document.getElementsByName("radioGroup");
+        for (let i = 0; i < elements.length; i++) {
+            const element = elements[i];
+            if (element.checked) {
+                alert(i + 1);
+            }
+        }
+    } 
+</script>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <p></p>
+    <form>
+        <input type="text" name="in">
+    </form>
+    <p></p>
+
+    <script>
+
+        var oP = document.getElementsByTagName("p");
+        var oForm = document.getElementsByTagName("form")[0];
+
+        oForm.in.oninput = function () {
+            let len = oForm.in.value.length;
+            oP[0].innerHTML = len > 3 ? len > 6 ? "强啊" : "soso" : "弱鸡"
+        }
+
+        oForm.in.onblur = function () {
+            oP[1].innerHTML = "完成"
+        }
+
+    </script>
+</body>
+
+</html>

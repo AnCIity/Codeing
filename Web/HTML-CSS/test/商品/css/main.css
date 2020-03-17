@@ -1,0 +1,109 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+
+.item {
+	margin: 100px auto;
+}
+
+
+/* 第一题 */
+
+#item-one {
+	width: 370px;
+	height: 450px;
+	margin-top: 30px;
+}
+
+#item-one .one-chunk {
+	width: 340px;
+	height: 420px;
+	border: 5px solid #333333;
+	position: relative;
+	left: 20px;
+	top: 20px;
+}
+
+#item-one .one-chunk img {
+	position: absolute;
+	top: -25px;
+	left: -25px;
+}
+
+
+/* 第二题 */
+
+#item-two {
+	width: 800px;
+	height: 277px;
+	position: relative;
+}
+
+#item-two .body-chunk {
+	width: 199.25px;
+	height: 277px;
+	float: left;
+	text-align: center;
+	border-right: 1px solid #f0f0f0;
+}
+
+#item-two .body-chunk:last-child {
+	border-right: none;
+}
+
+#item-two .body-chunk p {
+	color: #666666;
+	font-size: 12px;
+	margin: 5px 0 18px;
+}
+
+#item-two .body-chunk a {
+	text-decoration: none;
+	font-size: 14px;
+	font-weight: bold;
+	background-color: #e6382f;
+	color: white;
+	display: block;
+	width: 160px;
+	height: 20px;
+	margin: 0 auto;
+	border: 1px solid #e6382f;
+}
+
+#item-two .body-chunk a span:first-child {
+	font-weight: normal;
+	font-size: 12px;
+}
+
+#item-two .body-chunk a span:last-child {
+	display: block;
+	width: 80px;
+	float: right;
+	background-color: white;
+	color: gray;
+	font-size: 12px;
+	line-height: 20px;
+	text-decoration: line-through;
+	font-weight: normal;
+}
+
+#item-two .two-side {
+	width: 20px;
+	height: 40px;
+	background-color: #d9d9d9;
+	color: white;
+	text-align: center;
+	line-height: 40px;
+	position: absolute;
+	top: calc(50% - 25px);
+}
+
+#item-two .side-left {
+	left: 0;
+}
+
+#item-two .side-right {
+	right: 0;
+}
+

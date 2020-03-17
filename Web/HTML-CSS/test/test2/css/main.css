@@ -1,0 +1,270 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	background-color: #f5f5f5;
+}
+
+.item {
+	margin: 100px auto;
+	background-color: white;
+}
+
+
+/* 第一题 */
+
+#item-one {
+	width: 420px;
+	padding: 10px;
+}
+
+#item-one h4 {
+	color: white;
+	line-height: 30px;
+	padding-left: 25px;
+	background-color: #00adef;
+}
+
+#item-one p {
+	font-size: 14px;
+	border: 2px solid #04adf0;
+	margin-top: 20px;
+	padding: 10px 20px;
+}
+
+
+/* 第二题 */
+
+#item-two {
+	width: 300px;
+	height: 270px;
+	text-align: center;
+	padding-top: 30px;
+}
+
+#item-two img {
+	border: 1px solid #cccccc;
+}
+
+#item-two h5 {
+	font-weight: normal;
+	font-size: 14px;
+}
+
+#item-two p {
+	color: grey;
+	font-size: 14px;
+	margin: 10px 0;
+}
+
+#item-two h4 {
+	color: red;
+}
+
+#item-two h4 span {
+	color: gray;
+	font-size: 14px;
+	font-weight: normal;
+	text-decoration: line-through;
+}
+
+
+/* 第三题 */
+
+#item-three {
+	width: 214px;
+	background-color: #605f63;
+	padding: 20px 0;
+}
+
+#item-three ul {
+	list-style: none;
+}
+
+#item-three ul li a {
+	display: block;
+	color: white;
+	line-height: 40px;
+	text-decoration: none;
+	padding: 0 20px;
+}
+
+#item-three ul li a:hover {
+	background-color: #ff6700;
+}
+
+
+/* 第四题 */
+
+#item-four {
+	width: 290px;
+	height: 410px;
+}
+
+#item-four .four-cotent {
+	font-size: 14px;
+	font-weight: bold;
+	color: #333;
+	line-height: 25px;
+	padding: 15px 26px;
+}
+
+#item-four .four-from {
+	font-size: 14px;
+	color: gray;
+	padding: 8px 26px;
+}
+
+#item-four .four-info {
+	color: #333;
+	font-weight: bold;
+	font-size: 15px;
+	padding: 4px 26px;
+}
+
+#item-four .four-info span {
+	color: red;
+	font-weight: normal;
+}
+
+
+/* 第五题 */
+
+#item-five {
+	width: 224px;
+}
+
+#item-five h2 {
+	width: 224px;
+	font-weight: normal;
+	font-size: 22px;
+	color: #0088d3;
+	border-bottom: 2px solid #42a6f5;
+	padding-bottom: 7px;
+}
+
+#item-five .five-body {
+	width: 224px;
+	height: 284px;
+	background-image: url(../img/cts-191128153816782.jpg);
+	margin-top: 20px;
+	padding-top: 30px;
+}
+
+#item-five .five-body p {
+	width: 194px;
+	color: white;
+	font-size: 14px;
+	line-height: 24px;
+	margin: 0 15px;
+	
+}
+
+#item-five .five-body a {
+	text-decoration: none;
+	font-size: 14px;
+	color: #004586;
+	display: block;
+	margin-top: 160px;
+	text-align: center;
+}
+
+
+/* 第六题 */
+
+#item-six {
+	width: 220px;
+}
+
+#item-six h3 {
+	color: white;
+	font-weight: normal;
+	font-size: 18px;
+	line-height: 50px;
+	padding-left: 10px;
+	background-color: #ff4a00;
+	background-image: url(../img/cts-191128172841546.jpg);
+	background-repeat: no-repeat;
+	background-position: 150px;
+}
+
+#item-six ul li {
+	list-style: none;
+}
+
+#item-six ul li a {
+	display: block;
+	line-height: 45px;
+	color: #333333;
+	text-decoration: none;
+	padding-left: 15px;
+	border: 1px solid #e6e6e6;
+	border-top: none;
+}
+
+#item-six ul li a:hover {
+	text-decoration: underline;
+	color: #ff4a00;
+}
+
+
+/* 第七题 */
+
+#item-seven {
+	width: 230px;
+	text-align: center;
+	padding: 50px 0;
+}
+
+#item-seven h5 {
+	font-weight: normal;
+	margin-top: 50px;
+}
+
+#item-seven span {
+	display: block;
+	color: #ff6700;
+	font-size: 13px;
+	margin: 10px 0;
+}
+
+#item-seven p {
+	color: gray;
+	font-size: 13px;
+}
+
+
+/* 第八题 */
+
+#item-eight {
+	width: 960px;
+	height: 390px;
+	background-image: url(../img/pic.png);
+	background-size: 960px 390px;
+	overflow: hidden;
+}
+
+.eight-chunk {
+	width: 860px;
+	height: 255px;
+	border: 1px solid #2b66cb;
+	margin: 75px 53px;
+	text-align: center;
+}
+
+.eight-chunk h3 {
+	color: white;
+	line-height: 40px;
+	background-color: #2b6fd5;
+}
+
+.eight-chunk ul li {
+	list-style: none;
+	color: white;
+	font-size: 14px;
+	line-height: 35px;
+	border-bottom: 1px solid #2b6fd5;
+	background-color: #3a48a0;
+}

@@ -1,0 +1,82 @@
+#box {
+	width: 800px;
+	height: 600px;
+	background-color: gray;
+	overflow: hidden;
+	z-index: 1;
+	background: linear-gradient(to right, #eb4c4c 50%, #132135 50%);
+	position: relative;
+	margin: 60px auto 0 auto;
+}
+
+#chunk {
+	display: flex;
+	justify-content: center;
+	z-index: -1;
+}
+
+
+
+/* 设置块公共属性 */
+.chunk {
+	width: 136px;
+	height: 600px;
+	transform: skewX(-30deg);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+	text-align: center;
+	transition: width 0.4s;
+}
+
+
+.chunk-one {
+	background-color: #eb4c4c;
+}
+
+.chunk-two {
+	background-color: #f7ba49;
+}
+
+.chunk-three {
+	width: 316px;
+	background-color: #418d97;
+}
+
+.chunk-four {
+	background-color: #132135;
+}
+
+
+
+/* 将主操作区摆正 */
+.chunk-a {
+	transform: skewX(30deg);
+	cursor: pointer;
+	color: white;
+	user-select: none;
+	opacity: 0.5;
+}
+
+.chunk-a span {
+	display: block;
+}
+
+.chunk-three-oper {
+	opacity: 1;
+}
+
+/* 操作区效果 */
+#oper {
+	width: 700px;
+	height: 150px;
+	background-color: rgba(255, 255, 255, 0.1);
+	box-shadow: 0 0 150px rgba(0, 0, 0, 0.5);
+	position: absolute;
+	top: 225px;
+	left: 50px;
+	/* 鼠标穿透 */
+	pointer-events:none;
+}
+

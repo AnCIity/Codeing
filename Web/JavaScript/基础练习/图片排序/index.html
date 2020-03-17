@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            text-align: center;
+        }
+
+        button {
+            cursor: pointer;
+            display: inline-block;
+            margin: 0 50px;
+            background-color: brown;
+            color: #fff;
+            height: 40px;
+            width: 100px;
+            border: none;
+            outline: none;
+        }
+
+        .box {
+            width: 800px;
+            margin: 50px auto;
+        }
+
+        ul {
+            margin-top: 50px;
+            width: 800px;
+            overflow: hidden;
+        }
+
+        li {
+            float: left;
+        }
+
+        img {
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <button>从大到小</button><button>随机排序</button>
+        <ul>
+            <li>
+                <img src="./images/1.gif">
+                <p>图片1</p>
+            </li>
+            <li>
+                <img src="./images/2.jpg">
+                <p>图片2</p>
+            </li>
+            <li>
+                <img src="./images/3.gif">
+                <p>图片3</p>
+            </li>
+            <li>
+                <img src="./images/4.gif">
+                <p>图片4</p>
+            </li>
+            <li>
+                <img src="./images/5.gif">
+                <p>图片5</p>
+            </li>
+            <li>
+                <img src="./images/3.gif">
+                <p>图片6</p>
+            </li>
+            <li>
+                <img src="./images/2.jpg">
+                <p>图片7</p>
+            </li>
+            <li>
+                <img src="./images/5.gif">
+                <p>图片8</p>
+            </li>
+        </ul>
+    </div>
+
+    <script src="http://lib.nanzc.com/js/jq/jquery-3.4.1.min.js"></script>
+    <script>
+        var oItem = [];
+        var flag = true;
+
+        // 将JQ对象转换数组
+        $("li").each((index, element) => {
+            // 使用索引排序
+            element.index = index;
+            oItem.push(element);
+        })
+
+        // 从大到小-从小到大
+        $("button:eq(0)").click(function () {
+
+            // 排序 item
+            oItem.sort((a, b) => flag ? b.index - a.index : a.index - b.index)
+
+            // 重载
+            reload()
+
+            // 修改导向
+            flag ? $(this).text("从小到大") : $(this).text("从大到小")
+
+            flag = !flag
+        })
+
+        // 随机
+        $("button:eq(1)").click(function () {
+            // 排序 item
+            oItem.sort((a, b) => 0.5 - Math.random())
+            // 重载
+            reload()
+        })
+
+
+        function reload() {
+            // 清空 Ul
+            $("ul").empty();
+
+            // 载入 li
+            oItem.forEach(element => {
+                $("ul").append(element);
+            })
+        }
+
+    </script>
+</body>
+
+</html>
