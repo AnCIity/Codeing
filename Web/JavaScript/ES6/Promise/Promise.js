@@ -83,7 +83,7 @@ function isJSON(str) {
 }
 
 function to(promise) {
-    return promise.then(res => [null, res]).catch(err => err);
+    return promise.then(res => [null, res]).catch(err => [err]);
 }
 
 async function cityAsync() {
