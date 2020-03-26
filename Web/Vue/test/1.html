@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1</title>
+    <script src="https://vuejs.org/js/vue.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            margin: 50px auto;
+            width: 990px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        li {
+            margin-bottom: 10px;
+            list-style: none;
+            width: 190px;
+            overflow: hidden;
+            border-radius: 6px;
+        }
+
+        .pic {
+            position: relative;
+            height: 190px;
+        }
+
+        .logo {
+            position: absolute;
+            bottom: -20px;
+            left: 53px;
+            height: 40px;
+            width: 84px;
+            border-radius: 18px;
+            text-align: center;
+            background: white;
+        }
+
+        .logo img {
+            margin-top: 2px;
+        }
+
+        .describe {
+            background: #c21ed7;
+            padding: 20px 0 15px;
+        }
+
+        p {
+            text-align: center;
+            color: white;
+        }
+
+        p:nth-child(2) {
+            margin-top: 4px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <ul>
+            <li v-for="item in arr">
+                <div class="pic">
+                    <img :src="item.img">
+                    <div class="logo">
+                        <img :src="item.logo">
+                    </div>
+                </div>
+                <div class="describe">
+                    <p>{{item.name}}</p>
+                    <p>{{item.desc}}</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <script>
+        var vm = new Vue({
+            el: "#app",
+            data: {
+                arr: [{ "img": "https://img.alicdn.com/bao/upload/TB19T_1VwHqK1RjSZFEXXcGMXXa.jpg_190x190Q75s0.jpg_.webp", "logo": "https://img.alicdn.com/bao/upload/TB1MJZoVxnaK1RjSZFtXXbC2VXa.png_70x70Q75s0.jpg_.webp", "name": "顺钦银楼旗舰店", "desc": "满300减60元" }, { "img": "https://img.alicdn.com/bao/upload/TB10t5Mi13tHKVjSZSgXXX4QFXa.jpg_190x190Q75s0.jpg_.webp", "logo": "https://img.alicdn.com/bao/upload/TB1GrubV4naK1RjSZFBXXcW7VXa.png_70x70Q75s0.jpg_.webp", "name": "种善堂大药房", "desc": "爆款第2件半价" }, { "img": "https://img.alicdn.com/bao/upload/TB1bNnhVIbpK1RjSZFyXXX_qFXa.jpg_190x190Q75s0.jpg_.webp", "logo": "https://img.alicdn.com/bao/upload/TB1gMeGVSzqK1RjSZPcXXbTepXa.png_70x70Q75s0.jpg_.webp", "name": "美乐棵旗舰店", "desc": "全店享满赠" }, { "img": "https://img.alicdn.com/bao/upload/TB1mAL.b2c3T1VjSZPfXXcWHXXa.jpg_190x190Q75s0.jpg_.webp", "logo": "https://img.alicdn.com/bao/upload/TB1A7D.b2c3T1VjSZPfXXcWHXXa.png_70x70Q75s0.jpg_.webp", "name": "Sparllo海外旗舰店", "desc": "每满299减5元" }, { "img": "https://img.alicdn.com/bao/upload/TB1aBnGVrPpK1RjSZFFXXa5PpXa.jpg_190x190Q75s0.jpg_.webp", "logo": "https://img.alicdn.com/bao/upload/TB1qfMJiu3tHKVjSZSgXXX4QFXa.png_70x70Q75s0.jpg_.webp", "name": "古尚古旗舰店", "desc": "全场满88减10" }, { "img": "https://img.alicdn.com/bao/upload/TB17dX1WlLoK1RjSZFuXXXn0XXa.jpg_190x190Q75s0.jpg_.webp", "logo": "https://img.alicdn.com/bao/upload/TB1ryWsWhnaK1RjSZFtXXbC2VXa.png_70x70Q75s0.jpg_.webp", "name": "如喜旗舰店", "desc": "满300减30不封顶" }, { "img": "https://img.alicdn.com/bao/upload/TB1csu3VSrqK1RjSZK9XXXyypXa.jpg_190x190Q75s0.jpg_.webp", "logo": "https://img.alicdn.com/bao/upload/TB19QLdVFzqK1RjSZFCXXbbxVXa.png_70x70Q75s0.jpg_.webp", "name": "张裕官方旗舰店", "desc": "抢店铺双重赠品" }, { "img": "https://img.alicdn.com/bao/upload/TB1z_bEXUGF3KVjSZFvXXb_nXXa.jpg_190x190Q75s0.jpg_.webp", "logo": "https://img.alicdn.com/bao/upload/TB1ejDFXQ5E3KVjSZFCXXbuzXXa.png_70x70Q75s0.jpg_.webp", "name": "虹越旗舰店（天猫）", "desc": "满300减30" }, { "img": "https://img.alicdn.com/bao/upload/TB1nHV1V4jaK1RjSZKzXXXVwXXa.jpg_190x190Q75s0.jpg_.webp", "logo": "https://img.alicdn.com/bao/upload/TB1tARCVYrpK1RjSZTEXXcWAVXa.png_70x70Q75s0.jpg_.webp", "name": "婷妃内衣旗舰店", "desc": "满一百减十元" }, { "img": "https://img.alicdn.com/bao/upload/TB1kQGbVyLaK1RjSZFxXXamPFXa.jpg_190x190Q75s0.jpg_.webp", "logo": "https://img.alicdn.com/bao/upload/TB14bFWVwHqK1RjSZJnXXbNLpXa.png_70x70Q75s0.jpg_.webp", "name": "韩雅伊人旗舰店", "desc": "满99-10元" }, { "img": "https://g.alicdn.com/s.gif", "logo": "https://g.alicdn.com/s.gif", "name": "好护士器械旗舰店", "desc": "全场低至9.9" }, { "img": "https://g.alicdn.com/s.gif", "logo": "https://g.alicdn.com/s.gif", "name": "澳兰黛旗舰店", "desc": "全场满299-50" }, { "img": "https://g.alicdn.com/s.gif", "logo": "https://g.alicdn.com/s.gif", "name": "新日电动车旗舰店", "desc": "晒单再领赠品" }, { "img": "https://g.alicdn.com/s.gif", "logo": "https://g.alicdn.com/s.gif", "name": "帝防旗舰店", "desc": "比5折低 每300-30" }, { "img": "https://g.alicdn.com/s.gif", "logo": "https://g.alicdn.com/s.gif", "name": "凤凰金圣源专卖店", "desc": "1元秒大额券" }, { "img": "https://g.alicdn.com/s.gif", "logo": "https://g.alicdn.com/s.gif", "name": "蛟蓓旗舰店", "desc": "全店低至三折" }, { "img": "https://g.alicdn.com/s.gif", "logo": "https://g.alicdn.com/s.gif", "name": "日丰家居旗舰店", "desc": "买就送浴室挂件" }, { "img": "https://g.alicdn.com/s.gif", "logo": "https://g.alicdn.com/s.gif", "name": "eko家居旗舰店", "desc": "抢限时2件7.5折" }, { "img": "https://g.alicdn.com/s.gif", "logo": "https://g.alicdn.com/s.gif", "name": "GoPro官方旗舰店", "desc": "直降送好礼" }, { "img": "https://g.alicdn.com/s.gif", "logo": "https://g.alicdn.com/s.gif", "name": "美国belli官方旗舰店", "desc": "全店折后满300-60" }]
+            }
+        })
+
+    </script>
+</body>
+
+</html>

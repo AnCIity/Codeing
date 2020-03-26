@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src='http://lib.nanzc.com/js/vue/vue-2.6.11.min.js'></script>
+</head>
+
+<body>
+
+    <div id="app">
+        <button-counter></button-counter>
+        <button-counter></button-counter>
+    </div>
+
+    <script>
+        /* 
+            全局组件注册
+        */
+
+        // 组件使用驼峰式命名组件时：在 html 内使用需小写并使用 - 连接，在其他组件字符串模板内可以使用驼峰命名
+        Vue.component("button-counter", {
+            // 形成闭包，保证数据独立
+            data() {
+                return {
+                    count: 0
+                }
+            },
+            // 确保具有一个根元素
+            template: '<button @click="handle">点击了{{count}}次</button>',
+            methods: {
+                handle() {
+                    this.count++
+                }
+            }
+        })
+
+
+
+        var vm = new Vue({
+            el: "#app",
+            data: {
+
+            }
+        })
+    </script>
+</body>
+
+</html>

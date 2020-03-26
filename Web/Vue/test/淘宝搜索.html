@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src='http://lib.nanzc.com/js/vue/vue-2.6.11.min.js'></script>
+</head>
+
+<body>
+
+    <div id="app">
+        <input type="text" v-model="value">
+        <ul>
+            <li v-for="item in arr" :key="item">
+                {{item[0]}}
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        const vm = new Vue({
+            el: "#app",
+            data: {
+                value: "",
+                arr: []
+            },
+            watch: {
+                value(val) {
+                    if (val === "") {
+                        this.arr = [];
+                        return
+                    }
+                    let element = document.createElement("script");
+                    element.src =
+                        `https://suggest.taobao.com/sug?code=utf-8&q=${val}&_ksTS=1569480588020_298&k=1&area=c2c&bucketid=20&callback=jsonp299`;
+                    document.body.appendChild(element);
+                    document.body.removeChild(element);
+                }
+            }
+        });
+
+        function jsonp299(data) {
+            vm.arr = data.result
+        }
+    </script>
+</body>
+
+</html>

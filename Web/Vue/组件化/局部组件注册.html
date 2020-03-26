@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src='http://lib.nanzc.com/js/vue/vue-2.6.11.min.js'></script>
+</head>
+
+<body>
+    <div id="app">
+        <hello-one></hello-one>
+        <hello-two></hello-two>
+    </div>
+
+    <script>
+        /* 
+            局部组件注册
+        */
+
+        const HelloOne = {
+            data() {
+                return {
+                    msg: 'HelloOne'
+                }
+            },
+            template: '<div>{{msg}}</div>'
+        }
+
+        const HelloTwo = {
+            data() {
+                return {
+                    msg: 'HelloTwo'
+                }
+            },
+            template: '<div>{{msg}}</div>'
+        }
+
+        const vm = new Vue({
+            el: "#app",
+            data: {
+
+            },
+            components: {
+                "hello-one": HelloOne,
+                "hello-two": HelloTwo
+            }
+        })
+    </script>
+</body>
+
+</html>

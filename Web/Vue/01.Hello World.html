@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <label>数值A：</label>
+        <input type="text" v-model="a">
+        <label>数值B：</label>
+        <input type="text" v-model="b">
+        <button @click="sum">计算</button>
+        <!-- 只有可以输入数据的 才支持 v-model -->
+        计算结果：<div>{{result}}</div>
+    </div>
+
+    <script src="https://vuejs.org/js/vue.min.js"></script>
+    <script>
+
+        /*
+            Vue 的基本使用步骤
+            1、需要提供标签用于填充数据
+            2、引入 vue.js 库文件
+            3、可以使用 vue 的语法实现功能
+            4.将 vue 提供的数据填充到标签
+        */
+
+        var vm = new Vue({
+            // 元素的挂载位置
+            el: '#app',
+            // 模型数据
+            data: {
+                a: "",
+                b: "",
+                result: ""
+            },
+            methods: {
+                sum() {
+                    this.result = Number(this.a) + Number(this.b)
+                }
+            }
+        })
+
+        // 就这样吧嗯嗯 看看他的
+
+    </script>
+</body>
+
+</html>
