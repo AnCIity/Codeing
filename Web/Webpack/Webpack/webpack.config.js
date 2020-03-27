@@ -10,6 +10,9 @@ const htmlPlugin = new HtmlWebpackPlugin({
     filename: "index.html"
 });
 
+// 导入Vue依赖插件
+const VueLoaderPlugin = require("vue-loader/lib/plugin");
+
 module.exports = {
     // 编译模式
     // development 不会压缩不会混淆
@@ -25,7 +28,7 @@ module.exports = {
         filename: "bundle.js"
     },
     // webpack打包期间用到的插件列表
-    plugins: [htmlPlugin],
+    plugins: [htmlPlugin, new VueLoaderPlugin()],
     // 所有第三方文件模块的匹配规则
     module: {
         rules: [
@@ -48,7 +51,8 @@ module.exports = {
                 use: "url-loader"
             },
             // exclude：排除
-            { test: /\.js$/, use: "babel-loader", exclude: /node_modules/ }
+            { test: /\.js$/, use: "babel-loader", exclude: /node_modules/ },
+            { test: /\.vue$/, loader: "vue-loader" }
         ]
     }
 };
