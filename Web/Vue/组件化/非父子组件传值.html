@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src='http://lib.nanzc.com/js/vue/vue-2.6.11.min.js'></script>
+</head>
+
+<body>
+
+    <div id="app">
+        <div>父组件</div>
+        <hr>
+        <button @click="handle">销毁 one-event 事件</button>
+        <hr>
+        <son-one></son-one>
+        <hr>
+        <son-two></son-two>
+    </div>
+
+    <script>
+        /* 
+            兄弟组件之间传值：
+                通过事件中心托管的形式
+                事件中心：
+                    const hub = new Vue()
+                注册：
+                    hub.$on("event-name", (value...) => {})
+                调用：
+                    hub.$emit("event-name", value...)
+                销毁：
+                    hub.$off("event-name")
+        */
+        // 单独的事件中心管理组件间的通信
+        const hub = new Vue()
+
+        // 子组件1
+        Vue.component("son-one", {
+            data() {
+                return {
+                    num: 0
+                }
+            },
+            template: `
+                <div>
+                    <div>One: {{num}}</div>
+                    <div>
+                        <button @click="handle">修改Two</button>
+                    </div>
+                </div> 
+            `,
+            methods: {
+                handle() {
+                    // 触发兄弟组件的事件
+                    hub.$emit("two-event", 2)
+                }
+            },
+            mounted() {
+                // 监听事件
+                hub.$on("one-event", (value) => {
+                    this.num += value
+                })
+            }
+        })
+
+        // 子组件2
+        Vue.component("son-two", {
+            data() {
+                return {
+                    num: 0
+                }
+            },
+            template: `
+                <div>
+                    <div>Two: {{num}}</div>
+                    <div>
+                        <button @click="handle">修改One</button>
+                    </div>
+                </div> 
+            `,
+            methods: {
+                handle() {
+                    // 触发兄弟组件的事件
+                    hub.$emit("one-event", 1)
+                }
+            },
+            mounted() {
+                // 监听事件
+                hub.$on("two-event", (value) => {
+                    this.num += value
+                })
+            }
+        })
+
+        // 父组件
+        const vm = new Vue({
+            el: "#app",
+            data: {
+
+            },
+            methods: {
+                handle() {
+                    hub.$off("one-event")
+                    // 多个分开写即可
+                    // hub.$off("two-event")
+                }
+            }
+        })
+    </script>
+
+</body>
+
+</html>

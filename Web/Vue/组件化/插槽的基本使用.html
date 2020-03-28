@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src='http://lib.nanzc.com/js/vue/vue-2.6.11.min.js'></script>
+</head>
+
+<body>
+
+    <div id="app">
+
+        <h2>插槽的基本使用</h2>
+
+        <hr>
+
+        <info-slot>undefined</info-slot>
+        <info-slot>is not a function</info-slot>
+        <!-- 未传值时使用默认内容 -->
+        <info-slot></info-slot>
+
+    </div>
+
+    <script>
+        /* 
+            组件插槽
+        */
+
+        Vue.component("info-slot", {
+            template: `
+                <div>
+                    <strong>ERROR: </strong>
+                    <slot>默认内容<slot>
+                </div>
+            `
+        })
+
+        const vm = new Vue({
+            el: "#app",
+            data: {
+
+            }
+        })
+    </script>
+
+</body>
+
+</html>

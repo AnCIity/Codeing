@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src='http://lib.nanzc.com/js/vue/vue-2.6.11.min.js'></script>
+</head>
+
+<body>
+
+    <div id="app">
+        <div>{{pMsg}}</div>
+
+        <!-- 1.props 属性名：在HTML中改为横线命名方式 -->
+
+        <!-- 2.此传值方法值类型：String -->
+        <menu-item son-title="来自父组件的值"></menu-item>
+        <!-- 2.此传值方法值类型：v-bind绑定的属性的值将按照js计算，所以值类型为js中的类型 -->
+        <menu-item :son-title="pTitle"></menu-item>
+
+    </div>
+
+    <script>
+        /* 
+            父组件向子组件传值
+        */
+
+        Vue.component("menu-item", {
+            // 1.props 属性名：驼峰命名时
+            props: ['sonTitle'],
+            data() {
+                return {
+                    msg: "子组件数据"
+                }
+            },
+            // 1.props 属性名：在模板中依然可以使用驼峰命名
+            template: "<div>{{msg + '----' + sonTitle}}</div>"
+        })
+
+        const vm = new Vue({
+            el: "#app",
+            data() {
+                return {
+                    pMsg: "父组件中内容",
+                    pTitle: "动态绑定父组件值"
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

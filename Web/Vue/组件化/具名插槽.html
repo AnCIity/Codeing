@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src='http://lib.nanzc.com/js/vue/vue-2.6.11.min.js'></script>
+</head>
+
+<body>
+
+    <div id="app">
+
+        <h2>具名插槽</h2>
+
+        <hr>
+
+        <base-layout>
+            <!-- template起到临时包裹的作用，将不会被解析到 html -->
+            <template v-slot:header>
+                <p>头部信息1</p>
+                <p>头部信息2</p>
+            </template>
+            <p>主要内容1</p>
+            <p>主要内容2</p>
+            <template v-slot:footer>
+                <p>底部信息1</p>
+                <p>底部信息2</p>
+            </template>
+        </base-layout>
+
+    </div>
+
+    <script>
+        // 具名插槽
+
+        Vue.component("base-layout", {
+            template: `
+                <div>
+                    <header>
+                        <slot name="header">头部默认内容</slot>
+                    </header>
+                    <main>
+                        <slot>默认插槽</slot>
+                    </main>
+                    <footer>
+                        <slot name="footer">底部默认内容</slot>
+                    </footer>
+                </div>
+            `
+        })
+
+        const vm = new Vue({
+            el: "#app",
+            data: {
+
+            }
+        })
+    </script>
+
+</body>
+
+</html>

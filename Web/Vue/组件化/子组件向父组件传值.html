@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src='http://lib.nanzc.com/js/vue/vue-2.6.11.min.js'></script>
+</head>
+
+<body>
+
+    <div id="app">
+        <div :style="{fontSize: fontSize +'px'}">{{perMsg}}</div>
+        <menu-item @enlarge-text="handle"></menu-item>
+    </div>
+
+    <script>
+        /* 
+            子组件向父组件传值
+            props传递数据原则：单向数据流
+        */
+
+        Vue.component("menu-item", {
+            template: `<button @click='$emit("enlarge-text", 5)'>子组件按钮</button>`
+        })
+
+        const vm = new Vue({
+            el: "#app",
+            data: {
+                perMsg: "父组件中内容",
+                fontSize: 10
+            },
+            methods: {
+                handle(value) {
+                    this.fontSize += value
+                }
+            }
+        })
+    </script>
+
+</body>
+
+</html>
