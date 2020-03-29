@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <!-- 导入 vue 文件 -->
+    <script src='http://lib.nanzc.com/js/vue/vue-2.6.11.min.js'></script>
+    <!-- 导入 vue-router 管理路由 -->
+    <script src="./js/vue-router-3.0.2.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 路由导航 -->
+        <router-link to="/user/1">User1</router-link>
+        <router-link to="/user/2">User2</router-link>
+        <!-- 跳转至命名路由 -->
+        <router-link :to="{ name: 'user', params: {id: 3} }">User3</router-link>
+        <router-link to="/register">register</router-link>
+
+        <!-- 路由占位符 -->
+        <router-view></router-view>
+    </div>
+
+    <script>
+        // 创建组件
+        const User = {
+            // 使用 props 接收参数
+            props: ["id", "name", "age"],
+            // 使用 $route.params 获取路由参数
+            template: `
+                <div>
+                    <h1>User 组件 -- 用户id：{{id}} -- 用户姓名：{{name}} -- 用户年龄：{{age}}</h1>
+                    <button @click="goRegister">注册</button>
+                </div>
+            `,
+            methods: {
+                goRegister() {
+                    // 使用 this.$router.push() 方法
+                    /* 
+                        字符串：（路径名称）
+                            router.push("/register")
+                        对象：
+                            router.push({ path: "/register" })
+                        带查询参数：// /user?name=City
+                            router.push({ path: "/register", query: { name: "City" } })
+                        命名路由：
+                            router.push({ name: "/register", params: { name: "City" } })
+                    */
+                    this.$router.push("/register")
+                }
+            }
+        }
+
+        const Register = {
+            template: `
+                <div>
+                    <h1>Register 组件</h1>
+                    <button @click="goBack">后退</button>
+                </div>
+            `,
+            methods: {
+                goBack() {
+                    // 2.使用 this.$router.go() 方法
+                    this.$router.go(-1)
+                }
+            }
+        }
+
+        // 创建路由实例对象
+        const router = new VueRouter({
+            // routes 是路由规则数组
+            routes: [
+                // 每个路由规则都是一个配置对象，其中至少包含 path 和 component 两个属性
+                // path：表示当前路由规则匹配的 hash 地址
+                // component：表示当前路由对应要展示的 组件
+                {
+                    // 重定向
+                    path: "/",
+                    redirect: "/user/undefined"
+                },
+                {
+                    // 通过 name 属性命名路由
+                    name: "user",
+                    // 使用 :paramsName 的形式动态匹配路由，如：/user/234 /user/777
+                    path: '/user/:id',
+                    component: User,
+                    // 使用 props 传参
+                    // props: true // 布尔类型 -- 动态
+                    // props: {name: "City", age: 19} // 对象类型 -- 静态
+                    // 函数类型 -- 动静结合
+                    props: route => ({
+                        name: "City",
+                        age: 19,
+                        id: route.params.id
+                    })
+                },
+                {
+                    path: '/register',
+                    component: Register
+                }
+            ]
+        })
+
+        // 创建 vm 实例对象
+        const vm = new Vue({
+            // 指定控制区域
+            el: "#app",
+            data: {},
+            // 挂载路由实例对象
+            router
+        })
+    </script>
+</body>
+
+</html>
