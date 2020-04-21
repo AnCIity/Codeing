@@ -18,7 +18,7 @@
         <router-link to="/user/1">User1</router-link>
         <router-link to="/user/2">User2</router-link>
         <!-- 2.跳转至命名路由 -->
-        <router-link :to="{ name: 'user', params: {id: 3} }">User3</router-link>
+        <router-link :to="{ name: 'user', data: {id: 3} }">User3</router-link>
         <router-link to="/register">register</router-link>
 
         <!-- 路由占位符 -->
@@ -31,7 +31,12 @@
             // 使用 props 接收参数
             props: ["id", "name", "age"],
             // 使用 $route.params 获取路由参数
-            template: `<h1>User 组件 -- 用户id：{{id}} -- 用户姓名：{{name}} -- 用户年龄：{{age}}</h1>`
+            template: `<h1>User 组件 -- 用户id：{{id}} -- 用户姓名：{{name}} -- 用户年龄：{{age}} <button @click="loga">点击</button></h1>`,
+            methods: {
+                loga() {
+                    console.log(this.$route);
+                }
+            }
         }
 
         const Register = {
@@ -54,7 +59,7 @@
                     // 1.通过 name 属性命名路由
                     name: "user",
                     // 使用 :paramsName 的形式动态匹配路由，如：/user/234 /user/777
-                    path: '/user/:id',
+                    path: '/user',
                     component: User,
                     // 使用 props 传参
                     // props: true // 布尔类型 -- 动态
@@ -63,7 +68,7 @@
                     props: route => ({
                         name: "City",
                         age: 19,
-                        id: route.params.id
+                        // id: route.params.id
                     })
                 },
                 {

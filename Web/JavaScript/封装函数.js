@@ -176,8 +176,6 @@ function getCookie(key) {
     return -1;
 }
 
-// 删除cookie  重复生成字符串
-
 /**
  * @author City
  * @method ajax - 发送AJAX请求
@@ -282,7 +280,7 @@ function hideDom(element) {
  */
 
 function getNowUnix() {
-    return new Date().valueOf()
+    return Date.now()
 }
 
 
